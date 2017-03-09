@@ -1,0 +1,11 @@
+engine.p3d
+engine/model.cfg
+engine/test_L.p3d
+engine2.p3d
+engine/test_R.p3d
+tex/MIG29_BUMP.paa
+*.tga
+tex/MIG29_Diff_NRM.png
+tex/MIG29_Diff_NRM.paa
+tex/MIG29_SMD.paa
+tex/MIG29_SMD.png
