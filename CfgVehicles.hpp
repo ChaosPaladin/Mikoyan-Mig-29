@@ -105,8 +105,8 @@ class CfgVehicles
 		//memoryPointsGetInDriver = "pos_driver";
 		//memoryPointsGetInDriverDir = "pos_driver_dir";
 
-		weapons[]= {};
-		magazines[]= {};
+		weapons[]= { "CMFlareLauncher" };
+		magazines[]= { "300Rnd_CMFlare_Chaff_Magazine" };
 		class pilotCamera {
 			class OpticsIn {
 				class Wide {
