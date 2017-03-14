@@ -1,6 +1,10 @@
 #include "basicDefines_A3.hpp"
 #include "CfgMovesBasic.hpp"
 #include "CfgVehicles.hpp"
+#include "CfgMagazines.hpp"
+#include "CfgAmmo.hpp"
+#include "CfgWeapons.hpp"
+#include "CfgNonAIVehicles.hpp"
 
 class CfgPatches
 {
@@ -12,6 +16,6 @@ class CfgPatches
 		};
 		weapons[] = {};
 		requiredVersion = 0.0.1;
-		requiredAddons[] = {"Su33_Protatype_PT_2"};
+		requiredAddons[] = {};
 	};
 };

@@ -15,3 +15,5 @@ tex/hud.png
 tex/hud_glass.png
 tex/panel_glass.png
 tex/seat.png
+*.png
+*.fbx

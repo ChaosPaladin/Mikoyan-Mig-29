@@ -89,17 +89,17 @@ class CfgVehicles
 			"p strela"
 		};
 		memoryPointGun="machinegun";
+		driverRightHandAnimName = "ControlStick";
 		/*memoryPointLRocket="L raketa";
 		memoryPointRRocket="P raketa";
-		driverRightHandAnimName = "ControlStick";
 		driverLeftHandAnimName = "control_throttle";
 		driverLeftLegAnimName = "pilot_pedal_L";
 		driverRightLegAnimName = "pilot_pedal_R";
 		memoryPointLDust = "pos_dust_left";
 		memoryPointRDust = "pos_dust_right";
 		memoryPointGun = "pos_nosegun";*/
-		//memoryPointLMissile = "l strela";
-		//memoryPointRMissile = "p strela";
+		memoryPointLMissile = "LMissile";
+		memoryPointRMissile = "RMissile";
 		memoryPointCM[] = {"flare_L","flare_R"};
 		memoryPointCMDir[] = {"flare_L_dir","flare_R_dir"};
 		memoryPointsGetInDriver = "pos_driver";
@@ -107,12 +107,22 @@ class CfgVehicles
 
 		weapons[]=
 		{
-			"Su_GSh301",
+			"Mig_fake_weapon",
+
+			"Mig_GSh301",
+
+			"Mig_R73M1Launcher",
+
+			"Mig_R27Launcher",
+
+			"Mig_KH29_Launcher",
+
 			"CMFlareLauncher"
 		};
 		magazines[]=
 		{
-			"Su_300Rnd_30mm_GSh301",
+			"Mig_150Rnd_30mm_GSh301",
+
 			"300Rnd_CMFlare_Chaff_Magazine"
 		};
 		class pilotCamera {
@@ -183,10 +193,6 @@ class CfgVehicles
 		reportOwnPosition = true; 	/*Says if the vehicle is able to broadcast its own position*/
 
 		envelope[]={0,0.40000001,1.9,4,6.8000002,8.3000002,8.5,7.8000002,6.1999998,4.5999999,3.7,2.8,2.3,2,1.8,1.5,1.2,0.80000001,0.5,0.30000001,0.2,0};
-		class Eventhandlers: Eventhandlers
-		{
-			fired="[_this] exec ""\SU_33_Flanker_D\sqs\fireGsh.sqs"",_this call BIS_Effects_EH_Fired";
-		};
 		class MarkerLights
 		{
 			class back_lights
@@ -289,7 +295,7 @@ class CfgVehicles
 			{
 				sound[]=
 				{
-					"SU_33_Flanker_D\sounds\ext-jetair-engine-low1",
+					"Mikoyan-Mig-29\sounds\ext-jetair-engine-low1",
 					2.5118899,
 					1,
 					1600
@@ -301,7 +307,7 @@ class CfgVehicles
 			{
 				sound[]=
 				{
-					"SU_33_Flanker_D\sounds\ext-jetair-engine-high3",
+					"Mikoyan-Mig-29\sounds\ext-jetair-engine-high3",
 					2.5118899,
 					1.3,
 					1800
@@ -313,7 +319,7 @@ class CfgVehicles
 			{
 				sound[]=
 				{
-					"SU_33_Flanker_D\sounds\ext-jetair-forsage1",
+					"Mikoyan-Mig-29\sounds\ext-jetair-forsage1",
 					2.5118899,
 					1.1,
 					2000
@@ -332,7 +338,7 @@ class CfgVehicles
 			{
 				sound[]=
 				{
-					"SU_33_Flanker_D\sounds\int-av8b-engine-low",
+					"Mikoyan-Mig-29\sounds\int-av8b-engine-low",
 					0.56234097,
 					1
 				};
@@ -343,7 +349,7 @@ class CfgVehicles
 			{
 				sound[]=
 				{
-					"SU_33_Flanker_D\sounds\int-av8b-engine",
+					"Mikoyan-Mig-29\sounds\int-av8b-engine",
 					1,
 					1
 				};
@@ -354,7 +360,7 @@ class CfgVehicles
 			{
 				sound[]=
 				{
-					"SU_33_Flanker_D\sounds\int-av8b-forsage-1",
+					"Mikoyan-Mig-29\sounds\int-av8b-forsage-1",
 					0.56234097,
 					1.1
 				};
@@ -408,35 +414,54 @@ class CfgVehicles
 		insideSoundCoef = 0.1;
 		hiddenselections[]=
 		{
-			/*"canopy",
-			"canopyglass",
-			"seat",
-			"num1",
-			"num2"*/
+			"number_1",
+			"number_2"
 		};
 		class AnimationSources
 		{
-
 			class ABcut
 			{
 				source="user";
 				initPhase=1;
 				animPeriod=0.0099999998;
 			};
-
 		};
 		class UserActions
 		{
+			class ABon
+			{
+				displayName="Afterburner ON";
+				position="pos player";
+				shortcut="SeagullFastForward";
+				radius=20;
+				onlyforplayer=0;
+				condition="this animationPhase ""ABcut"" == 1 and player in this and isengineon this";
+				statement="this animate [""ABcut"",0]";
+				hideOnUse=1;
+				showWindow=0;
+			};
+			class ABoff
+			{
+				displayName="Afterburner Off";
+				position="pos player";
+				shortcut="SeagullFastForward";
+				radius=20;
+				onlyforplayer=0;
+				condition="this animationPhase ""ABcut"" == 0 and player in this and isengineon this";
+				statement="this animate [""ABcut"",1]";
+				showWindow=0;
+				hideOnUse=1;
+			};
 
 		};
-		/*class Eventhandlers: Eventhandlers
+		class Eventhandlers: Eventhandlers
 		{
-			init="[_this select 0] execVM ""\SU_33_Flanker_D\sqs\init.sqf"",[_this select 0]exec ""\SU_33_Flanker_D\sqs\init.sqs"",[_this select 0]exec ""\SU_33_Flanker_D\sqs\wing.sqs"",[_this select 0] execVM ""\SU_33_Flanker_D\sqs\AircraftEffects.sqf"",_this execVM ""\SU_33_Flanker_D\sqs\aircraftvapour.sqf"",";
-			fired="[_this] exec ""\SU_33_Flanker_D\sqs\fireGsh.sqs"",_this call BIS_Effects_EH_Fired";
-		};*/
+			init="[_this select 0] execVM ""\Mikoyan-Mig-29\sqf\init.sqf"",[_this select 0] execVM ""\Mikoyan-Mig-29\sqf\AircraftEffects.sqf"",";
+			fired="[_this] exec ""\Mikoyan-Mig-29\sqf\fireGsh.sqs"",_this call BIS_Effects_EH_Fired";
+		};
 		class Library
 		{
-			libTextDesc = "The Sukhoi Su-33 (NATO reporting name Flanker-D) is a carrier-based multi-role fighter aircraft produced by Russian firm Sukhoi beginning in 1982. \nThe main differences from the Su-27 are that the Su-33 can operate from aircraft carriers and is capable of aerial refueling. \nThe wings were fitted with power-assisted folding, and the vertical tails were shortened to allow the fighter to fit in the typically crowded hangars of an aircraft carrier. The rear radome was shortened and reshaped to allow for the tail hook, as well as to save space inside the hangars.";
+			libTextDesc = "The Mikoyan MiG-29 is a twin-engine jet fighter aircraft designed in the Soviet Union. ";
 		};
 		//HUD configuration
 			class MFD
