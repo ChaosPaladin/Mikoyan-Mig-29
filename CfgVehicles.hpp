@@ -207,7 +207,7 @@ class CfgVehicles
 			{
 				name="hull_lights";
 				color[]={0.0, 0.9, 1.0, 0.0};
-				ambient[]={0.0, 0.0 0.0, 0.0};
+				ambient[]={0.0, 0.0, 0.0, 0.0};
 				brightness=0.05;
 				blinking=false;
 			};
@@ -457,7 +457,7 @@ class CfgVehicles
 		class Eventhandlers: Eventhandlers
 		{
 			init="[_this select 0] execVM ""\Mikoyan-Mig-29\sqf\init.sqf"",[_this select 0] execVM ""\Mikoyan-Mig-29\sqf\AircraftEffects.sqf"",";
-			fired="[_this] exec ""\Mikoyan-Mig-29\sqf\fireGsh.sqs"",_this call BIS_Effects_EH_Fired";
+			fired="[_this] execVM ""\Mikoyan-Mig-29\sqf\Gsh.sqf"",_this call BIS_Effects_EH_Fired";
 		};
 		class Library
 		{

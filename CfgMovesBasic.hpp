@@ -3,7 +3,7 @@ class CfgMovesBasic
 	class DefaultDie;
 	class ManActions
 	{
-		mig_pilot="pilot_plane_cas_02";
+		mig_pilot="pilot_plane_cas_01";
 	};
 };
 class CfgMovesMaleSdr: CfgMovesBasic

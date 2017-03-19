@@ -1,4 +1,5 @@
 
+private ["_plane","_num","_num1","_num2"];
 _plane = _this select 0;
 
 _plane setObjectTextureGlobal [0, "\Mikoyan-Mig-29\num\2.paa"];

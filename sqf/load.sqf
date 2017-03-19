@@ -1,17 +1,10 @@
 
-  private ["_plane"];
+ private ["_R_73","_R_73M1","_R_27","_KH29","_Safe_m","_R_73_magazine","_R_73M1_magazine", "_plane","_R_27_magazine","_KH29_magazine","_Fake_magazin","_station_1","_station_2","_station_3","_station_4","_station_5","_station_6","_loadout"];
+
 
   _plane = _this;
-  //max count of ammo
-    _R73_count  = 2;
-    _R27_count  = 2;
-    _R73M_count = 2;
-    _KH29_count = 2;
-
 //WEAPON CLASSNAME DEFINITIONS
 //LIST OF ALL POSSIBLE WEAPONS USED WITH THIS PLANE
-
-    _R_73    =  "Mig_R73Launcher";
 
     _R_73M1  =  "Mig_R73M1Launcher";
 
@@ -19,12 +12,8 @@
 
     _KH29    =  "Mig_KH29_Launcher";
 
-    _Safe_m  =  "Mig_fake_weapon";
-
 //MAGAZINE CLASSNAME DEFINITIONS
 //LIST OF ALL POSSIBLE MAGAZINES USED WITH THIS PLANE
-
-    _R_73_magazine    = "Mig_R73";
 
     _R_73M1_magazine  = "Mig_R73M1";
 
@@ -32,17 +21,9 @@
 
     _KH29_magazine    = "Mig_KH29";
 
-    _Fake_magazin     = "Mig_fake_M";
 
 //ROMEVE ALL POSSIBLE DEFAULT WEAPONS
-    _plane removeWeapon _R_73M1;
-    _plane removeWeapon _R_27;
-    _plane removeWeapon _KH29;
-
-//ROMEVE ALL POSSIBLE DEFAULT MAGAZINES
-    _plane removeMagazine _R_73M1_magazine;
-    _plane removeMagazine _R_27_magazine;
-    _plane removeMagazine _KH29_magazine;
+  removeAllWeapons _plane;
 
 //DEFINE NEW LOADOUT
     _station_1 = _R_73M1_magazine;
@@ -56,6 +37,7 @@
 
 //systemChat "Weapons Loading!";
   titleText ["Weapons are Loading", "PLAIN DOWN",0.3];
+
     _plane addMagazine _station_1;
     _plane addMagazine _station_2;
       sleep 0.5;
@@ -71,6 +53,7 @@
 
       //ADD NEW WEAPONS FOR PRELOADED MAGAZINES
         _loadout = magazines _plane;
+
         if ((_R_73M1_magazine in _loadout)) then
         {
           _plane addWeapon _R_73M1;

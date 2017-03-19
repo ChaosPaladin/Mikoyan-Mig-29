@@ -29,7 +29,7 @@ while {(alive _this) and (_this animationPhase "KillFx" == 0)} do
 		_emitter setDropInterval 0
 	};
 	_emitter setParticleParams ["\Mikoyan-Mig-29\SMOKE\Smoke","","Billboard",1,0.05,[0,-0.5,1.0],(velocity _this),1,1.2745,1,0.001,[10,20],[[1,1,1,0],[1,1,1,0.1],[1,1,1,0]],[0],0,0,"","",_this];
-	_emitter setpos (getpos _this);
+	_emitter setPos (getPos _this);
 	_lastspeed = speed _this;
 	sleep 0.356759;
 };

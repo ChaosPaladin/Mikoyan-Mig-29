@@ -17,3 +17,5 @@ tex/panel_glass.png
 tex/seat.png
 *.png
 *.fbx
+wheel/wheel.p3d
+sqf/AircraftEffects/AircraftEffects.sqf

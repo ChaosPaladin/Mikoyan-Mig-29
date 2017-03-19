@@ -1,6 +1,8 @@
-_veh = (_this select 0);
 
-//Private ["_script1[]"];
+
+private ["_script1[]","_veh"];
+
+_veh = (_this select 0);
 
 _script1 = [];
 

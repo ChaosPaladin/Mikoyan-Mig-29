@@ -42,7 +42,14 @@
 #define LockCadet	1
 #define LockYes		2
 
-enum {StabilizedInAxesNone,StabilizedInAxisX,StabilizedInAxisY,StabilizedInAxesBoth, StabilizedInAxesXYZ};
+enum
+{
+    StabilizedInAxesNone,
+    StabilizedInAxisX,
+    StabilizedInAxisY,
+    StabilizedInAxesBoth,
+    StabilizedInAxesXYZ
+};
 
 #define StabilizedInAxesNone 0
 #define StabilizedInAxisX 1
