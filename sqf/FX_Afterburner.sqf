@@ -154,8 +154,8 @@ _veldiry = ((vectorDir _this) select 1) / _veldir;
 _veldirz = ((vectorDir _this) select 2) / _veldir;
 
 //drop burner
-	_leftengine setParticleParams ["\Mikoyan-Mig-29\cl_exp","","Billboard",1,(0.06 - (0.05*((speed _this) / (_maxspeed /2) ))),(_this selectionPosition "left"),[(velocity _this select 0) - _veldirx *30,(velocity _this select 1) - _veldiry *30,(velocity _this select 2) - _veldirz *30],1,1.2745,1,0,[0.7,0.1],[_cl0,_cl1,_cl2,_cl3],[0],0,0,"","",_this];
-	_rightengine setParticleParams ["\Mikoyan-Mig-29\cl_exp","","Billboard",1,(0.06 - (0.05*((speed _this) / (_maxspeed /2) ))),(_this selectionPosition "right"),[(velocity _this select 0) - _veldirx *30,(velocity _this select 1) - _veldiry *30,(velocity _this select 2) - _veldirz *30],1,1.2745,1,0,[0.7,0.1],[_cl0,_cl1,_cl2,_cl3],[0],0,0,"","",_this];
+	_leftengine setParticleParams ["\a3\data_f\cl_exp","","Billboard",1,(0.06 - (0.05*((speed _this) / (_maxspeed /2) ))),(_this selectionPosition "left"),[(velocity _this select 0) - _veldirx *30,(velocity _this select 1) - _veldiry *30,(velocity _this select 2) - _veldirz *30],1,1.2745,1,0,[0.7,0.1],[_cl0,_cl1,_cl2,_cl3],[0],0,0,"","",_this];
+	_rightengine setParticleParams ["\a3\data_f\cl_exp","","Billboard",1,(0.06 - (0.05*((speed _this) / (_maxspeed /2) ))),(_this selectionPosition "right"),[(velocity _this select 0) - _veldirx *30,(velocity _this select 1) - _veldiry *30,(velocity _this select 2) - _veldirz *30],1,1.2745,1,0,[0.7,0.1],[_cl0,_cl1,_cl2,_cl3],[0],0,0,"","",_this];
 
 {
 	_x setPos (getPos _this)

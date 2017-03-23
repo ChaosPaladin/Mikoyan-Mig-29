@@ -19,3 +19,5 @@ tex/seat.png
 *.fbx
 wheel/wheel.p3d
 sqf/AircraftEffects/AircraftEffects.sqf
+sqf/f22/init.sqf
+sqf/f22/mfd.hpp

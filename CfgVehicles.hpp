@@ -35,6 +35,7 @@ class CfgVehicles
 		accuracy = 3.500000;
 		nameSound="aircraft";
 		fuelCapacity=2500;
+		maxSpeed = 2500;
 		camouflage=5;
 		lightOnGear = true;
 		Audible=9;
@@ -69,7 +70,6 @@ class CfgVehicles
 		fuelLeakiness = 20;
 		extCameraPosition[] = {0, 2, -30};
 		gearRetracting=1;
-		maxSpeed=2100;
 		//timeToStop=0.2;
 		commanderUsesPilotView=true;
 		flapsFrictionCoef=0.2;
