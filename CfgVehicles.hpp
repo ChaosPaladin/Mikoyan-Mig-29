@@ -419,6 +419,12 @@ class CfgVehicles
 		};
 		class AnimationSources
 		{
+		    class Super_M
+            {
+            	source="user";
+            	initPhase=1;
+            	animPeriod=0.0099999998;
+            };
 			class ABcut
 			{
 				source="user";
@@ -428,6 +434,28 @@ class CfgVehicles
 		};
 		class UserActions
 		{
+		    class Super_M_on
+        	{
+        		displayName="Super maneuverability ON";
+        		position="pos player";
+        		radius=20;
+        		onlyforplayer=0;
+        		condition="this animationPhase ""Super_M"" == 1 and player in this and isengineon this";
+        		statement="this animate [""Super_M"",0]";
+        		hideOnUse=1;
+        		showWindow=0;
+        	};
+        	class Super_M_off
+            {
+               displayName="Super maneuverability OFF";
+               position="pos player";
+               radius=20;
+               onlyforplayer=0;
+               condition="this animationPhase ""Super_M"" == 0 and player in this and isengineon this";
+               statement="this animate [""Super_M"",1]";
+               hideOnUse=1;
+               showWindow=0;
+            };
 			class ABon
 			{
 				displayName="Afterburner ON";
